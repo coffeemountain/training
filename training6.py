@@ -16,5 +16,5 @@ def get_title(url):
 
 #任意のURLを取って、そのページに含まれるすべてのリンク先のURLのリストを返す get_all_links を定義せよ
 def get_all_links(url):
-    return get_soup(url).find_all("a", class_="link", href="/link")
-
+    a_tags = get_soup(url).find_all("a")
+    return [tag.get("href") for tag in a_tags]
