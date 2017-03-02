@@ -15,6 +15,7 @@ def create_parameter_dict(url):
         dict[key_value_pair[0]] = key_value_pair[1]
     return dict
 
+
 #次のような意地悪メールアドレスを正しいメールアドレスになおして返す関数 correct_email_addres を作れ★★
 def correct_email_address(email):
     #replace_at = re.sub("( )?(_|\[)( )?(at|atmk|atmark|AT|ATMARK)( )?(_|\[)( )?", "@", email)
