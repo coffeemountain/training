@@ -25,7 +25,7 @@ def correct_email_address(email):
         
     else:
         replace_at_address = email
-    replace_dot = re.sub("(.*)@([^ ]?)( \[|_| )(dot|dt)(\] |_| )", "\\1@\\2.", replace_at_address, re.IGNORECASE)
+    replace_dot = re.sub("@([^ ]+)( )?(\[|_| )(dot|dt)(\]|_| )( )?", "@\\1.", replace_at_address, re.IGNORECASE)
     
     #replace_dot = re.sub("(.*)@(.*)?? \[(dot|dt)\", "\\1@\\2.", replace_at_address, re.IGNORECASE)
 
