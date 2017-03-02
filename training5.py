@@ -3,11 +3,11 @@
 #Scoutクラスを作る。Scoutクラスは、インスタンス変数として、name（スカウト名, 文字列）, worker_type(雇用形態, 文字列), skills (要求スキル文字列のリスト)を持つ。これらの値をとって初期化するメソッド __init__を作れ。
 #Scoutクラスに、そのScoutの候補者を保持するインスタンス変数candidatesを追加せよ。candidatesはPersonオブジェクトのリストである。Scoutクラスに、Personをcandidatesに追加するインスタンスメソッドadd_candidateを追加せよ
 class Scout:
-    def __init__(self, name, worker_type, skills, candidates):
+    def __init__(self, name, worker_type, skills):
         self.name = name
         self.worker_type = worker_type
         self.skills = skills
-        self.candidates = candidates
+        self.candidates = []
 
     def add_skill(self, skill):
         if skill in self.skills:
@@ -24,17 +24,14 @@ class Scout:
 
     #Scoutクラスに、候補者の名前のリストを返すget_candidate_name_listを定義せよ。
     def get_candidate_name_list(self):
-        candidates_list = []
-        for i in range(len(self.candidates)):
-            candidates_list.append(self.candidates[i].name)
-        return candidates_list
-    
+        return [candidate.name for candidate in self.candidates]
+
     #Scoutクラスに、skillsに定義されたスキルのいずれかをもっている候補者のリストを返すメソッド search_candidate_orを定義せよ。
     def search_candidate_or(self):
         candidates_or = [] 
         for candidate in self.candidates:
-            skills_set = candidate.skills + self.skills
-            if len(skills_set) > len(set(skills_set)):
+            skill_list = candidate.skills + self.skills
+            if len(skill_list) > len(set(skill_list)):
                 candidates_or.append(candidate.name)
         return candidates_or
 

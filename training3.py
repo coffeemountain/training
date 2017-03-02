@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 
 #値が数値であるディクショナリと数値nをとって、値をn倍する関数 multiply_dict を作れ　（一行でも書けます）
-def multiply_dict(dict, n):
-    for x in dict:
-        dict[x] = dict[x]*n
-    return dict
+def multiply_dict(dict1, n):
+    return {key: value *n for key, value in dict1.items()}
+
     
 #値が数値である2つのディクショナリを取って、そのディクショナリを合体したディクショナリを返す関数 merge_dict を作れ。同じキーをもっているものに関しては、値を足し算する。(出力のディクショナリの順番は問わない)★
 def merge_dict(dict1, dict2):
