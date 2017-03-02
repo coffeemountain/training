@@ -25,4 +25,4 @@ def correct_email_address(email):
 
     replace_dot = re.sub("@([^ ]+)( )?(\[|_| )(dot|dt)(\]|_| )( )?", "@\\1.", replace_at_address, re.IGNORECASE)
     
-  return replace_dot
+    return replace_dot
