@@ -17,7 +17,7 @@ def create_parameter_dict(url):
 
 #次のような意地悪メールアドレスを正しいメールアドレスになおして返す関数 correct_email_addres を作れ★★
 def correct_email_address(email):
-    replace_at = re.sub("(\[|_| | _)(at|atmk|atmark|AT|ATMARK)(\]|_| |_ )", "@", email)
-    replace_dot = re.sub("(\[|_| | _)(dot|DOT|Dot|dt)(\]|_| |_ )", ".", replace_at)
-
+    #replace_at = re.sub("( )?(_|\[)( )?(at|atmk|atmark|AT|ATMARK)( )?(_|\[)( )?", "@", email)
+    replace_at = re.sub("( )?(\[|_| )( )?(at|atmk|atmark|AT|ATMARK)( )?(\]|_| )( )?", "@", email)
+    replace_dot = re.sub("( )?(\[|_| )( )?(dot|DOT|Dot|dt)( )?(\]|_| )( )?", ".", replace_at)
     return replace_dot
