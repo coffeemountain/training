@@ -24,5 +24,20 @@ def correct_email_address(email):
         replace_at_address = email
 
     replace_dot = re.sub("@([^ ]+)( )?(\[|_| )(dot|dt)(\]|_| )( )?", "@\\1.", replace_at_address, re.IGNORECASE)
-    
+
     return replace_dot
+
+'''
+len(re.findall('@',email)) == 0 は 単に
+'@' in email
+としたほうが見やすいでしょう
+
+
+dotの置換、.が1個しかない想定なんで
+
+>>>correct_email_address('functionp@yahoo [dot] co [dot] jp')
+'functionp@yahoo.co [dot] jp'
+ってなっちゃいます
+
+
+'''
